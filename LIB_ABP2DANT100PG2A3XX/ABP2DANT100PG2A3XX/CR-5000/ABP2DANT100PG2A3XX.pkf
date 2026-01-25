@@ -1,0 +1,10 @@
+(unit MM)
+
+(package "ABP2DANT100PG2A3XX"
+    (type UNDEF)
+    (uver 2)
+    (mountForm default
+        (footprintRef "ABP2DANT100PG2A3XX")
+        (spec "default")
+    )
+)

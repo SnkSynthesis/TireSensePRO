@@ -1,0 +1,13 @@
+(unit MM)
+
+(package "ABP2DANT100PG2A3XX"
+    (type UNDEF)
+    (uver 2)
+    (cuser "SamacSys")
+    (uuser "SamacSys")
+    (utime 2025-07-11-07:34:02)
+    (mountForm default
+        (footprintRef "ABP2DANT100PG2A3XX")
+        (spec "System")
+    )
+)

@@ -1,0 +1,11 @@
+FILE_TYPE = MULTI_PHYS_TABLE;
+
+PART 'ABP2DANT100PG2A3XX'
+CLASS = DISCRETE
+{========================================================================================}
+:"MANUFACTURER_NAME", "MANUFACTURER_PART_NUMBER"= "PART_NUMBER", "JEDEC_TYPE", "PACK_TYPE", "MOUSER_PART_NUMBER", "MOUSER_PRICE/STOCK", "DESCRIPTION", "DATASHEET", "HEIGHT";
+{========================================================================================}
+ "Honeywell", "ABP2DANT100PG2A3XX" (!) = "", "ABP2DANT100PG2A3XX", "Other", "785-P2DANT100PG2A3XX", "https://www.mouser.co.uk/ProductDetail/Honeywell/ABP2DANT100PG2A3XX?qs=iLbezkQI%252BsjuQframA4BWQ%3D%3D", "Pressure Sensor 100PSI (689.48kPa) Gauge Male - 0.11" (2.79mm) Tube 14 b 6-DIP (0.453", 11.50mm), Top Port", "https://prod-edam.honeywell.com/content/dam/honeywell-edam/sps/siot/en-us/products/sensors/pressure-sensors/board-mount-pressure-sensors/basic-abp2-series/documents/sps-siot-abp2-series-datasheet-32350268-en.pdf?download=false", "14.4 mm"
+END_PART
+
+END.

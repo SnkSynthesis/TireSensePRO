@@ -1,0 +1,9 @@
+Manufacturer=Honeywell
+PartNumber=ABP2DANT100PG2A3XX
+PartCategory=Undefined or Miscellaneous
+PackageCategory=Other
+PinCount=6
+Version=1.1
+Released=2025-07-11 07:34:02
+Downloaded=2026-01-14 00:27:24
+3D=Y
