@@ -1,0 +1,25 @@
+#include <Adafruit_ADS1X15.h>
+
+Adafruit_ADS1115 ads;
+struct {
+  float volts[4];
+} sensor;
+const float multiplier = 0.0001875F; 
+
+void setup() {
+  Serial.begin(115200);
+  ads.begin();
+}
+
+void loop() {
+  for (int i = 0; i < 4; i++) {
+    int16_t raw = ads.readADC_SingleEnded(i);
+    sensor.volts[i] = raw * multiplier; // The conversion math
+  }
+
+  // This whole code should work but Im not entirely sure since I dont have an ADC onhand with me. 
+  Serial.printf("A0: %.3fV | A1: %.3fV | A2: %.3fV | A3: %.3fV\n", 
+                sensor.volts[0], sensor.volts[1], sensor.volts[2], sensor.volts[3]);
+
+  delay(1000);
+}
