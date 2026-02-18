@@ -57,7 +57,7 @@ void loop() {
   dtostrf(psensor.percentage, 4, 1, percBuff);
   dtostrf(psensor.temperature, 4, 3, tBuff);
 
-  sprintf(printBuff, "%s PSI %\t %s %\t %s C \n", pBuff, percBuff, tBuff);
+  sprintf(printBuff, "%s PSI %\t %s%% \t %s C \n", pBuff, percBuff, tBuff);
   Serial.println(printBuff);
   delay(10);
 }
