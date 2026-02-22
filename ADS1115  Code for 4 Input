@@ -1,25 +1,39 @@
 #include <Adafruit_ADS1X15.h>
 
+// Gain must be GAIN_TWOTHIRDS (±6.144V) because the INFKL-15 outputs up to 4.9V at 150°C. Lower gain settings would clip
+// Using computeVolts() for  correct scaling for selected gain
 Adafruit_ADS1115 ads;
+
 struct {
   float volts[4];
+  float tempC[4];
 } sensor;
-const float multiplier = 0.0001875F; 
 
 void setup() {
   Serial.begin(115200);
   ads.begin();
+
+  ads.setGain(GAIN_TWOTHIRDS);
 }
 
 void loop() {
+
   for (int i = 0; i < 4; i++) {
     int16_t raw = ads.readADC_SingleEnded(i);
-    sensor.volts[i] = raw * multiplier; // The conversion math
+
+    sensor.volts[i] = ads.computeVolts(raw);
+
+    // transfer function (30mV/C, 0.40V offset)
+    sensor.tempC[i] = (sensor.volts[i] - 0.40) / 0.030;
   }
 
-  // This whole code should work but Im not entirely sure since I dont have an ADC onhand with me. 
-  Serial.printf("A0: %.3fV | A1: %.3fV | A2: %.3fV | A3: %.3fV\n", 
-                sensor.volts[0], sensor.volts[1], sensor.volts[2], sensor.volts[3]);
+  Serial.printf(
+    "A0: %.2f C | A1: %.2f C | A2: %.2f C | A3: %.2f C\n",
+    sensor.tempC[0],
+    sensor.tempC[1],
+    sensor.tempC[2],
+    sensor.tempC[3]
+  );
 
   delay(1000);
 }
