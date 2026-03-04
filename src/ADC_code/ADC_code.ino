@@ -32,12 +32,12 @@ void loop() {
   }
 
   Serial.printf(
-    "A0: %.2f C | A1: %.2f C | A2: %.2f C | A3: %.2f C\n",
-    s0.tempC[0],
-    s0.tempC[1],
-    s0.tempC[2],
-    s0.tempC[3]
+    "A0: %.2f C (%.2f V) | A1: %.2f C (%.2f V) $ | A2: %.2f C (%.2f V) | A3: %.2f C (%.2f V)\n",
+    s0.tempC[0], s0.volts[0],
+    s0.tempC[1], s0.volts[1],
+    s0.tempC[2], s0.volts[2],
+    s0.tempC[3], s0.volts[3]
   );
 
-  delay(1000);x 
+  delay(1000);
 }
